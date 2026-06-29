@@ -130,10 +130,13 @@ psql -d fccss_db -f FCCSS_Insert_Script.txt
 
 **Diya Bhuva**
 - GitHub: [@diya-bhuva](https://github.com/diya-bhuva)
+- 
 **Kavya Halani**
+-
 **Devarshi Patel**
+-
 **Arpit Payasi**
-
+-
 ---
 
 ## 📄 License
