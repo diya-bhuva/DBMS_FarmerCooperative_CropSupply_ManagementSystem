@@ -8,7 +8,7 @@ A relational database project designed to streamline the agricultural supply cha
 
 The **Farmer Cooperative Crop Supply System (FCCSS)** models the end-to-end workflow of agricultural cooperatives — from farmer registration and crop procurement to inventory tracking and buyer order fulfillment. The system is built on a normalized relational schema, ensuring data integrity, minimal redundancy, and efficient querying.
 
-> **Course Project** — Database Management Systems (DBMS)
+> **Course Project** - Database Management Systems (DBMS)
 
 ---
 
@@ -17,19 +17,14 @@ The **Farmer Cooperative Crop Supply System (FCCSS)** models the end-to-end work
 ```
 FCCSS/
 │
-├── er_diagram/             # ER Diagram (entity-relationship model)
-│   └── er_diagram.pdf
-│
-├── schema/                 # SQL scripts for database creation
-│   └── create_tables.sql
-│
-├── normalization/          # Normalization documentation (1NF → 3NF/BCNF)
-│   └── normalization.pdf
-│
+├── DDL_SCRIPT.txt                    # SQL DDL script for table creation
+├── ER_DIAGRAM.pdf                    # Entity-Relationship diagram
+├── FCCSS_Insert_Script.txt           # SQL script for inserting dummy data
+├── FCCSS_Queries.pdf                 # Sample SQL queries with output
+├── FDs_MinimalFDs_Normalization.pdf  # Functional dependencies & normalization
+├── RELATIONAL-SCHEMA.pdf             # Relational schema diagram
 └── README.md
 ```
-
-> ⚠️ *File names above are indicative — refer to actual files in the repo.*
 
 ---
 
@@ -52,7 +47,7 @@ FCCSS/
 
 The ER diagram captures all entities, attributes, primary keys, foreign keys, and relationships (one-to-many, many-to-many) in the system.
 
-📄 See [`er_diagram/`](./er_diagram/) for the full diagram.
+📄 See [`ER_DIAGRAM.pdf`](./ER_DIAGRAM.pdf) for the full diagram.
 
 ---
 
@@ -64,23 +59,28 @@ The database is implemented in **PostgreSQL**. The schema covers:
 - Primary key and foreign key relationships
 - `NOT NULL`, `UNIQUE`, and `CHECK` constraints for data integrity
 
+📄 See [`RELATIONAL-SCHEMA.pdf`](./RELATIONAL-SCHEMA.pdf) for the relational schema diagram.
+
 To set up the database locally:
 
 ```bash
 # 1. Create a new PostgreSQL database
 createdb fccss_db
 
-# 2. Run the schema script
-psql -d fccss_db -f schema/create_tables.sql
+# 2. Run the DDL script to create tables
+psql -d fccss_db -f DDL_SCRIPT.txt
+
+# 3. Insert dummy data
+psql -d fccss_db -f FCCSS_Insert_Script.txt
 ```
 
 ---
 
 ## 📐 Normalization
 
-The schema has been normalized up to **Third Normal Form (3NF)** to eliminate redundancy and ensure data consistency.
+The schema has been normalized to eliminate redundancy and ensure data consistency.
 
-📄 See [`normalization/`](./normalization/) for detailed step-by-step normalization documentation.
+📄 See [`FDs_MinimalFDs_Normalization.pdf`](./FDs_MinimalFDs_Normalization.pdf) for detailed functional dependencies and normalization steps.
 
 **Highlights:**
 - **1NF** — All attributes are atomic; no repeating groups
@@ -117,8 +117,11 @@ cd DBMS_FarmerCooperative_CropSupply_ManagementSystem
 # Create the database
 createdb fccss_db
 
-# Run schema script
-psql -d fccss_db -f schema/create_tables.sql
+# Run DDL script to create tables
+psql -d fccss_db -f DDL_SCRIPT.txt
+
+# Insert dummy data
+psql -d fccss_db -f FCCSS_Insert_Script.txt
 ```
 
 ---
