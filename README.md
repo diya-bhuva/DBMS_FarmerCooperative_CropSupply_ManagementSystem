@@ -95,7 +95,7 @@ The schema has been normalized to eliminate redundancy and ensure data consisten
 |---|---|
 | **PostgreSQL** | Relational database engine |
 | **SQL** | Schema definition and querying |
-| **Draw.io / Lucidchart** | ER Diagram design *(or whichever tool was used)* |
+| **dia** | ER Diagram design|
 
 ---
 
